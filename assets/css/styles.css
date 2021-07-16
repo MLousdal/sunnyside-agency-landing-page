@@ -364,13 +364,18 @@ nav a {
   content: "";
   position: absolute;
   left: -5%;
-  bottom: 0.15em;
+  bottom: 0.2em;
   width: 110%;
   height: 0.5em;
   background-color: hsl(51, 100%, 49%);
   border-radius: var(--border-radius);
   z-index: -1;
   opacity: 0.3;
+  transition: all ease-in 0.3s;
+}
+
+.learn-more:hover::after {
+  opacity: 1;
 }
 
 .red.learn-more::after {
