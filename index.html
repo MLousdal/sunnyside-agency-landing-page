@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sunnyside agency are a full-service creative agency specializing in helping brands grow fast.">
 
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/webTemplate.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="assets/js/scripts.js" defer></script>
   
   <title>Frontend Mentor | Sunnyside agency landing page</title>
 
@@ -15,31 +20,68 @@
   </style>
 </head>
 <body>
-  About
-  Services
-  Projects
-  Contact
-
-  We are creatives
-
-  Transform your brand
-
-  We are a full-service creative agency specializing in helping brands grow fast. 
-  Engage your clients through compelling visuals that do most of the marketing for you.
-
-  Learn more
-
-  Stand out to the right audience
-
-  Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll build and extend your brand in digital places. 
-
-  Learn more
-
-  Graphic design
-  Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients’ attention.
-
-  Photography
-  Increase your credibility by getting the most stunning, high-quality photos that improve your business image.
+  <nav>
+    <img src="assets\images\logo.svg" alt="logo" class="nav-logo">
+    <ul id="nav-links">
+        <li><a href="#" class="small-text">About</a></li>
+        <li><a href="#" class="small-text">Services</a></li>
+        <li><a href="#" class="small-text">Projects</a></li>
+        <li><a href="#" class="cta">Contact</a></li>
+    </ul>
+    <a href="javascript:void(0);" onclick="burgerToggle()" class="nav-btn" aria-label="menu"><img src="assets/images/icon-hamburger.svg" alt></a>
+</nav>
+  <header>
+    <h1 class="center-text header-title text-neutral-white">WE ARE CREATIVES</h1>
+    <img src="assets/images/icon-arrow-down.svg" class="header-arrow">
+    <picture>
+      <source media="(max-width: 600px)" srcset="assets/images/mobile/image-header.jpg">
+      <img src="assets/images/desktop/image-header.jpg" alt class="header-image">
+    </picture>
+  </header>
+  <main class="grid-main">
+    <section class="grid-item">
+      <article>
+        <h2>Transform your brand</h2>
+        <p>We are a full-service creative agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you.</p>
+        <a class="learn-more">Learn more</a>
+      </article>
+      <picture>
+        <source media="(max-width: 600px)" srcset="assets/images/mobile/image-transform.jpg">
+        <img src="assets/images/desktop/image-transform.jpg" alt>
+      </picture>
+    </section>
+    <section class="grid-item rev">
+      <article>
+        <h2>Stand out to the right audience</h2>
+        <p>Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll build and extend your brand in digital places.</p>
+        <a class="learn-more red">Learn more</a>
+      </article>
+      <picture>
+        <source media="(max-width: 600px)" srcset="assets/images/mobile/image-stand-out.jpg">
+        <img src="assets\images\desktop\image-stand-out.jpg" alt>
+      </picture>
+    </section>
+    <section class="grid-item">
+      <article>
+        <h3>Graphic design</h3>
+        <p>Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients’ attention.</p>
+      </article>
+      <picture>
+        <source media="(max-width: 600px)" srcset="assets\images\mobile\image-graphic-design.jpg">
+        <img src="assets\images\desktop\image-graphic-design.jpg" alt>
+      </picture>
+    </section>
+    <section class="grid-item">
+      <article>
+        <h3>Photography</h3>
+        <p>Increase your credibility by getting the most stunning, high-quality photos that improve your business image.</p>
+      </article>
+      <picture>
+        <source media="(max-width: 600px)" srcset="assets\images\mobile\image-photography.jpg">
+        <img src="assets\images\desktop\image-photography.jpg" alt>
+      </picture>
+    </section>
+  </main>
 
   Client testimonials
 

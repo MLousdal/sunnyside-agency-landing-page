@@ -10,6 +10,7 @@
 	--spacing-multiplier-m: 2;
 	--spacing-multiplier-l: 3;
 	--spacing-multiplier-xl: 4;
+	--spacing-multiplier-xl: 8;
   
 	/* Spacing translation */
 	/* For use insert fx. ´var(--spacing-s)´ into the wanted property */
@@ -18,9 +19,10 @@
 	--spacing-m: calc(var(--spacing) * var(--spacing-multiplier-m));
 	--spacing-l: calc(var(--spacing) * var(--spacing-multiplier-l));
 	--spacing-xl: calc(var(--spacing) * var(--spacing-multiplier-xl));
+	--spacing-xxl: calc(var(--spacing) * var(--spacing-multiplier-xxl));
   
 	/* ----- Border variables */
-	--border-radius: 10px;
+	--border-radius: 30px;
   
 	/* ----- Colors ----- */
   
