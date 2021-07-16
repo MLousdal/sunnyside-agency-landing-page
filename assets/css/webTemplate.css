@@ -10,7 +10,7 @@
 	--spacing-multiplier-m: 2;
 	--spacing-multiplier-l: 3;
 	--spacing-multiplier-xl: 4;
-	--spacing-multiplier-xl: 8;
+	--spacing-multiplier-xxl: 8;
   
 	/* Spacing translation */
 	/* For use insert fx. ´var(--spacing-s)´ into the wanted property */
