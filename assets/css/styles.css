@@ -45,7 +45,6 @@ body {
   line-height: 1.75;
   color: hsl(232, 10%, 55%);
   width: 100%;
-  max-width: 1600px;
   margin: 0 auto;
 }
 
@@ -55,7 +54,7 @@ body {
     ==============
 */
 
-/* ----- Font size is "Perfect Fourth" from https://type-scale.com/ -----  */
+/* ----- Font size is "Major Third" from https://type-scale.com/ -----  */
 
 p {
   padding-bottom: 1rem;
@@ -75,26 +74,26 @@ h5 {
 
 h1 {
   margin-top: 0;
-  font-size: 4.209rem;
+  font-size: 3.052rem;
   font-weight: 900;
   padding-bottom: 0rem;
 }
 
 h2 {
-  font-size: 3.157rem;
+  font-size: 2.441rem;
   font-weight: 700;
   padding-bottom: 1rem;
 }
 
-h3 {font-size: 2.369rem;}
+h3 {font-size: 1.953rem;}
 
 h4 {
-  font-size: 1.777rem;
+  font-size: 1.563rem;
   font-weight: 700;
 }
 
 h5 {
-  font-size: 1.333rem;
+  font-size: 1.25rem;
   margin-bottom: 1rem;
 }
 
@@ -142,37 +141,39 @@ a {
 /* ----- 3.1 Header ----- */
 
 header {
-  position: relative;
+  /* position: relative; */
   text-align: center;
-  /* max-height: calc(100vh - 90px); */
+  /* height: calc(100vh - 90px); */
+  overflow: hidden;
+  background-color: hsl(200,100%,62%);
 }
 
 .header-title {
   position: absolute;
   width: 100%;
   top: 10%;
+  z-index: 2;
 }
 
 .header-arrow {
   position: absolute;
-  top: 45%;
-  left: 48.5%;
+  top: 40%;
+  left: 48%;
+  z-index: 2;
 }
 
-/* ----- 3.2 Section ----- */
-
-section {
-}
-
-/* ----- 3.3 Article ----- */
-
-article {
+.header-image {
+  /* position: absolute; */
+  /* bottom: 0px; */
+  /* left: 0; */
+  width: 100%;
+  z-index: 1;
 }
 
 /* ----- 3.7 Footer  ----- */
 
 footer {
-  background-color: hsl(168, 34%, 41%);
+  background-color: hsl(167, 44%, 70%);
 }
 
 footer nav{
@@ -182,7 +183,7 @@ footer nav{
 }
 
 footer nav a{
-  transition: all ease-in 0.3s;
+  transition: all ease-in 0.2s;
 }
 
 footer nav a:hover{
@@ -194,6 +195,7 @@ footer nav a:hover{
 picture img{
   width: 100%;
   height: 100%;
+  display: block;
 }
 
 /* ----- 3.10 Misc. Positions ----- */
@@ -362,12 +364,19 @@ nav a {
 
 .single {
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .single article{
   position: absolute;
+  width: 60%;
   top: 60%;
-  padding: 0 var(--spacing-xxl);
+  padding: 0;
+}
+
+.single picture{
+  width: 100%;
 }
 
 /* ----- 4.3 Grid Gallery ----- */
@@ -389,6 +398,12 @@ nav a {
   margin: var(--spacing-s);
   border: none;
   background-color: var(--color-neutral-white);
+  transition: all ease-in 0.2s;
+}
+
+.cta:hover {
+  background-color: rgb(114,206,255);
+  color: var(--color-neutral-white);
 }
 
 .learn-more {
@@ -412,7 +427,7 @@ nav a {
   border-radius: var(--border-radius);
   z-index: -1;
   opacity: 0.3;
-  transition: all ease-in 0.3s;
+  transition: all ease-in 0.2s;
 }
 
 .learn-more:hover::after {
@@ -433,6 +448,9 @@ nav a {
   width: 25%;
   padding: var(--spacing-m);
   border-radius: 50%;
+}
+
+.test-container {
 }
 
 /* ----- 4.8 Icons ----- */
@@ -461,13 +479,13 @@ nav a {
 }
 
 .icon-dark-cyan {
-  filter: invert(28%) sepia(10%) saturate(2008%) hue-rotate(116deg) brightness(93%) contrast(88%);
+  filter: brightness(0) saturate(100%)invert(28%) sepia(10%) saturate(2008%) hue-rotate(116deg) brightness(93%) contrast(88%);
   padding: 0.2em;
-  transition: all ease-in 0.3s;
+  transition: all ease-in 0.2s;
 }
 
 a .icon-dark-cyan:hover {
-  filter: invert(100%) sepia(0%) saturate(4674%) hue-rotate(68deg) brightness(110%) contrast(102%);
+  filter: brightness(0) saturate(100%)invert(100%) sepia(0%) saturate(4674%) hue-rotate(68deg) brightness(110%) contrast(102%);
 }
 
 .round-border {
@@ -483,9 +501,31 @@ a .icon-dark-cyan:hover {
     ===============
 */
 
+@media screen and (max-width: 1150px) {
+  .single article{
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .grid-item {
+    grid-template-columns: 1fr;
+  }
+  .grid-item article {
+    text-align: center;
+    align-items: center;
+  }
+  .rev article{
+    grid-column: 1;
+  }
+  .test-container {
+    flex-direction: column;
+  }
+}
+
 @media only screen and (max-width: 770px) {
   nav {
-    align-items: flex-start;
+    /* align-items: flex-start; */
   }
   .nav-btn {
     display: block;
@@ -505,5 +545,20 @@ a .icon-dark-cyan:hover {
   }
   nav li {
     display: flex;
+  }
+  .grid-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  header {
+    /* height: calc(100vh - 46px); */
+  }
+  .header-arrow {
+    top: 60%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .single article{
+    width: 90%;
   }
 }
