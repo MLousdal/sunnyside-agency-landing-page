@@ -141,9 +141,8 @@ a {
 /* ----- 3.1 Header ----- */
 
 header {
-  /* position: relative; */
+  position: relative;
   text-align: center;
-  /* height: calc(100vh - 90px); */
   overflow: hidden;
   background-color: hsl(200,100%,62%);
 }
@@ -151,21 +150,18 @@ header {
 .header-title {
   position: absolute;
   width: 100%;
-  top: 10%;
+  top: 15%;
   z-index: 2;
 }
 
 .header-arrow {
   position: absolute;
-  top: 40%;
-  left: 48%;
+  top: 45%;
+  left: calc(50% - 18px);
   z-index: 2;
 }
 
 .header-image {
-  /* position: absolute; */
-  /* bottom: 0px; */
-  /* left: 0; */
   width: 100%;
   z-index: 1;
 }
@@ -525,40 +521,58 @@ a .icon-dark-cyan:hover {
 
 @media only screen and (max-width: 770px) {
   nav {
-    /* align-items: flex-start; */
+    padding: var(--spacing-s) 0;
   }
   .nav-btn {
     display: block;
     cursor: pointer;
     pointer-events: all;
+    padding-right: var(--spacing-m);
   }
   #nav-links {
     display: none;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: 15%;
+    left: 10%;
+    width: 80%;
     background-color: var(--color-neutral-white);
-    height: calc(100vh - (2 * var(--spacing-l)));
-    margin-top: var(--spacing-l);
-    padding-bottom: var(--spacing-l);
+    padding: var(--spacing-s) 0;
+    z-index: 5;
   }
-  nav li {
+  #nav-links::before {
+    content: "";
+    position: absolute;
+    top: -34px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 35px solid var(--color-neutral-white);
+    border-left: 35px solid transparent;
+  }
+  #nav-links li {
     display: flex;
+  }
+  #nav-links a.small-text {
+    color: hsl(210, 4%, 67%);
+    font-size: 1.1rem;
+  }
+  .cta {
+    background-color: hsl(51, 100%, 49%);
+    color: hsl(0, 0%, 0%);
   }
   .grid-gallery {
     grid-template-columns: repeat(2, 1fr);
   }
-  header {
-    /* height: calc(100vh - 46px); */
-  }
   .header-arrow {
-    top: 60%;
+    top: 58%;
   }
 }
 
 @media screen and (max-width: 600px) {
   .single article{
     width: 90%;
+  }
+  .header-arrow {
+    top: 50%;
   }
 }
